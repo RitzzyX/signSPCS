@@ -3,14 +3,13 @@ import { Project, Lead, AuthState } from '../types';
 import { INITIAL_PROJECTS } from '../constants';
 
 const KEYS = {
-  PROJECTS: 'azure_estates_projects',
-  LEADS: 'azure_estates_leads',
-  AUTH: 'azure_estates_auth',
-  ENQUIRED_PROJECTS: 'azure_estates_enquired'
+  PROJECTS: 'sig_spaces_projects',
+  LEADS: 'sig_spaces_leads',
+  AUTH: 'sig_spaces_auth',
+  ENQUIRED: 'sig_spaces_enquired'
 };
 
 export const storageService = {
-  // Projects
   getProjects: (): Project[] => {
     const data = localStorage.getItem(KEYS.PROJECTS);
     return data ? JSON.parse(data) : INITIAL_PROJECTS;
@@ -18,8 +17,6 @@ export const storageService = {
   saveProjects: (projects: Project[]) => {
     localStorage.setItem(KEYS.PROJECTS, JSON.stringify(projects));
   },
-  
-  // Leads
   getLeads: (): Lead[] => {
     const data = localStorage.getItem(KEYS.LEADS);
     return data ? JSON.parse(data) : [];
@@ -29,8 +26,6 @@ export const storageService = {
     leads.unshift(lead);
     localStorage.setItem(KEYS.LEADS, JSON.stringify(leads));
   },
-
-  // Auth (Mock)
   getAuth: (): AuthState => {
     const data = localStorage.getItem(KEYS.AUTH);
     return data ? JSON.parse(data) : { isAuthenticated: false, username: null };
@@ -38,20 +33,18 @@ export const storageService = {
   setAuth: (auth: AuthState) => {
     localStorage.setItem(KEYS.AUTH, JSON.stringify(auth));
   },
-
-  // Enquiries tracking (User side)
-  markEnquired: (projectId: string) => {
-    const enquired = storageService.getEnquired();
-    if (!enquired.includes(projectId)) {
-      enquired.push(projectId);
-      localStorage.setItem(KEYS.ENQUIRED_PROJECTS, JSON.stringify(enquired));
+  markEnquired: (id: string) => {
+    const items = storageService.getEnquired();
+    if (!items.includes(id)) {
+      items.push(id);
+      localStorage.setItem(KEYS.ENQUIRED, JSON.stringify(items));
     }
   },
   getEnquired: (): string[] => {
-    const data = localStorage.getItem(KEYS.ENQUIRED_PROJECTS);
+    const data = localStorage.getItem(KEYS.ENQUIRED);
     return data ? JSON.parse(data) : [];
   },
-  hasEnquired: (projectId: string): boolean => {
-    return storageService.getEnquired().includes(projectId);
+  hasEnquired: (id: string): boolean => {
+    return storageService.getEnquired().includes(id);
   }
 };
