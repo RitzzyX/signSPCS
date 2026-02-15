@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --signature-blue: #0F172A;
-            --signature-gold: #C5A059;
-            --signature-navy: #0B1120;
+            --sig-navy: #020617;
+            --sig-gold: #C5A059;
+            --sig-slate: #1E293B;
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FFFFFF;
-            color: var(--signature-blue);
+            background-color: var(--sig-navy);
+            color: #F8FAFC;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
             width: 100%;
@@ -26,32 +26,37 @@
         }
         .reveal {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
         .glass-nav {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        input, textarea, select {
-            appearance: none;
-            border-radius: 0;
-        }
-        @media (max-width: 640px) {
-            .mobile-title { font-size: 3.5rem !important; line-height: 1.1 !important; }
-            .mobile-subtitle { font-size: 1.125rem !important; }
-            .mobile-padding { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+        .gold-gradient {
+            background: linear-gradient(to right, #C5A059, #EAD196, #C5A059);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
-        .bg-signature-dark { background-color: var(--signature-blue); }
-        .text-signature-gold { color: var(--signature-gold); }
+        input, textarea, select {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+            border-radius: 0 !important;
+        }
+        input:focus, textarea:focus {
+            border-color: var(--sig-gold) !important;
+            outline: none;
+        }
     </style>
 <script type="importmap">
 {
@@ -59,10 +64,10 @@
     "react": "https://esm.sh/react@^19.2.4",
     "react-dom": "https://esm.sh/react-dom@^19.2.4",
     "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
     "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
   }
 }
 </script>
