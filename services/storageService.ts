@@ -1,6 +1,6 @@
 
-import { Project, Lead, AuthState } from '../types';
-import { INITIAL_PROJECTS } from '../constants';
+import { Project, Lead, AuthState } from '../types.ts';
+import { INITIAL_PROJECTS } from '../constants.tsx';
 
 const KEYS = {
   PROJECTS: 'sig_spaces_projects',

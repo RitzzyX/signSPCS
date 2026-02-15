@@ -1,8 +1,8 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { storageService } from '../services/storageService';
-import ProjectCard from '../components/ProjectCard';
+import { storageService } from '../services/storageService.ts';
+import ProjectCard from '../components/ProjectCard.tsx';
 
 const Home: React.FC = () => {
   const projects = storageService.getProjects().slice(0, 3);
