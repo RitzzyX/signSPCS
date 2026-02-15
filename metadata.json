@@ -1,0 +1,7 @@
+{
+  "name": "Signature Spaces - Luxury Real Estate",
+  "description": "A premium real estate platform for exclusive developments, featuring gated project insights, cinematic video walkthroughs, and elite unit configurations.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
