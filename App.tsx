@@ -1,14 +1,14 @@
 
 import React from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
-import Services from './pages/Services';
-import AdminLogin from './pages/AdminLogin';
-import AdminDashboard from './pages/AdminDashboard';
-import { storageService } from './services/storageService';
+import Navbar from './components/Navbar.tsx';
+import Home from './pages/Home.tsx';
+import Projects from './pages/Projects.tsx';
+import ProjectDetail from './pages/ProjectDetail.tsx';
+import Services from './pages/Services.tsx';
+import AdminLogin from './pages/AdminLogin.tsx';
+import AdminDashboard from './pages/AdminDashboard.tsx';
+import { storageService } from './services/storageService.ts';
 
 const ProtectedRoute = ({ children }: { children?: React.ReactNode }) => {
   const auth = storageService.getAuth();
