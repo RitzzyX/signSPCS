@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { storageService } from '../services/storageService';
+import { storageService } from '../services/storageService.ts';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
