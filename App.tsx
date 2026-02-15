@@ -18,44 +18,43 @@ const ProtectedRoute = ({ children }: { children?: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-const Footer = () => (
-  <footer className="bg-[#020617] py-24 px-8 text-white border-t border-white/5">
-    <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16">
-      <div className="col-span-1 md:col-span-2 space-y-6">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 border border-[#C5A059] rounded-full flex items-center justify-center">
-            <span className="text-white font-light text-xl">S</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-serif text-white tracking-[0.2em] uppercase leading-none">Signature</span>
-            <span className="text-[8px] text-[#C5A059] tracking-[0.5em] uppercase font-bold mt-1">Spaces</span>
-          </div>
+const BrandFooter = () => (
+  <footer className="bg-[#020617] py-32 px-8 text-white border-t border-white/5">
+    <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-20">
+      <div className="space-y-6">
+        <div className="w-16 h-16 border border-[#C5A059] rounded-full flex items-center justify-center mx-auto mb-10">
+          <span className="text-white font-light text-3xl">S</span>
         </div>
-        <p className="text-slate-500 max-w-sm text-sm font-light leading-relaxed italic">
-          Defining the intersection of architecture and fine art for the world's most discerning patrons.
-        </p>
+        <h2 className="text-4xl md:text-6xl font-serif tracking-tight">Signature Spaces</h2>
+        <p className="text-[#C5A059] text-[11px] uppercase tracking-[0.6em] font-black">Architectural Sovereignty</p>
       </div>
-      
-      <div className="space-y-6">
-        <h4 className="text-[10px] uppercase tracking-[0.4em] font-black text-[#C5A059]">The Collections</h4>
-        <ul className="space-y-3 text-slate-400 text-[10px] tracking-[0.2em] uppercase font-bold">
-          <li><a href="#" className="hover:text-white">Coastal Sovereignty</a></li>
-          <li><a href="#" className="hover:text-white">Urban Landmarks</a></li>
-          <li><a href="#" className="hover:text-white">Bespoke Penthouses</a></li>
-        </ul>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-16 w-full max-w-4xl border-y border-white/5 py-20">
+        <div className="space-y-6">
+          <h4 className="text-[10px] uppercase tracking-[0.4em] font-black text-slate-500">London</h4>
+          <p className="text-xs text-slate-400 font-light italic">Mayfair <br/> W1K 3AH</p>
+        </div>
+        <div className="space-y-6">
+          <h4 className="text-[10px] uppercase tracking-[0.4em] font-black text-slate-500">Dubai</h4>
+          <p className="text-xs text-slate-400 font-light italic">DIFC <br/> Gate Village</p>
+        </div>
+        <div className="space-y-6">
+          <h4 className="text-[10px] uppercase tracking-[0.4em] font-black text-slate-500">Monaco</h4>
+          <p className="text-xs text-slate-400 font-light italic">Carré d'Or <br/> MC 98000</p>
+        </div>
+        <div className="space-y-6">
+          <h4 className="text-[10px] uppercase tracking-[0.4em] font-black text-slate-500">Singapore</h4>
+          <p className="text-xs text-slate-400 font-light italic">Marina Bay <br/> Tower 2</p>
+        </div>
       </div>
-      
-      <div className="space-y-6">
-        <h4 className="text-[10px] uppercase tracking-[0.4em] font-black text-[#C5A059]">Concierge</h4>
-        <ul className="space-y-3 text-slate-400 text-[10px] tracking-[0.2em] uppercase font-bold">
-          <li><a href="#" className="hover:text-white">Privacy Protocols</a></li>
-          <li><a href="#" className="hover:text-white">Asset Management</a></li>
-          <li><a href="#" className="hover:text-white">Advisor Portal</a></li>
-        </ul>
+
+      <div className="pt-10 flex flex-col md:flex-row justify-between items-center w-full text-[9px] uppercase tracking-[0.5em] text-slate-700 font-black">
+        <p>&copy; 2025 Signature Spaces Portfolio. All Rights Reserved.</p>
+        <div className="flex space-x-12 mt-6 md:mt-0 italic">
+          <a href="#" className="hover:text-white transition-colors">Privacy Charter</a>
+          <a href="#" className="hover:text-white transition-colors">Legacy Terms</a>
+        </div>
       </div>
-    </div>
-    <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-slate-600 text-[8px] tracking-[0.5em] uppercase font-black text-center">
-      &copy; 2024 Signature Spaces. Silence is the Ultimate Luxury.
     </div>
   </footer>
 );
@@ -83,7 +82,7 @@ const App: React.FC = () => {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
-        <Footer />
+        <BrandFooter />
       </div>
     </Router>
   );
